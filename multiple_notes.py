@@ -18,9 +18,9 @@ def create_note():  # Функция создания новой заметки
 
     valid_statuses = ["Выполнена", "Активна", "Отложена"]  # Возможные статусы заметки
     while True:
-        print("\nВыберите статус заметки из предложенных:")
-        for i, temp_status in enumerate(valid_statuses, 1):
-            print(f"{i}. {temp_status}")
+        print("Выберите статус заметки из предложенных:")
+        for k, temp_status in enumerate(valid_statuses, 1):
+            print(f"{k}. {temp_status}")
         status = input("Введите статус: ").strip()
         if status in valid_statuses:  # Проверяем корректность ввода
             print("Статус успешно добавлен")
@@ -38,16 +38,15 @@ def create_note():  # Функция создания новой заметки
         except ValueError:
             print("Неверный формат даты. Попробуйте снова")
 
-    # Создаём словарь заметки
-    note = {
+    note_dict = {
         "Имя": username,
         "Заголовок": title,
         "Описание": content,
         "Статус": status,
         "Дата создания": created_date,
         "Дедлайн": issue_date.strftime("%d.%m.%Y")
-    }
-    return note
+    }  # Создаём словарь заметки
+    return note_dict
 
 
 notes = []  # Список для хранения всех заметок
