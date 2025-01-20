@@ -1,6 +1,6 @@
 def display_notes(notes):  # Функция для отображения всех заметок
     if not notes:
-        print("У вас нет сохраненных заметок.")
+        print("\nУ вас нет сохраненных заметок.")
         return
     print("\nСписок всех заметок:")
     for note_index, note in enumerate(notes, 1):
